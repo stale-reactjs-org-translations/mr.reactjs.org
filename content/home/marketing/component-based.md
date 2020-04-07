@@ -1,5 +1,5 @@
 ---
-title: Component-Based
+title: कॉम्पोनेन्ट-आधारित
 order: 1
 ---
 

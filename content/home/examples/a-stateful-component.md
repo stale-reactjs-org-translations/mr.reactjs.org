@@ -1,5 +1,5 @@
 ---
-title: A Stateful Component
+title: एक स्टेटफुल कॉम्पोनेन्ट
 order: 1
 domid: timer-example
 ---

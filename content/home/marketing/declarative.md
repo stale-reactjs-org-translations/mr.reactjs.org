@@ -1,5 +1,5 @@
 ---
-title: Declarative
+title: घोषणात्मक
 order: 0
 ---
 

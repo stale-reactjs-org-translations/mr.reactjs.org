@@ -1,5 +1,5 @@
 ---
-title: Learn Once, Write Anywhere
+title: एकदा शिका, कोठेही लिहा
 order: 2
 ---
 

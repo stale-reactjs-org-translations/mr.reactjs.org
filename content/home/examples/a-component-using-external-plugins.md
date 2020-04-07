@@ -1,5 +1,5 @@
 ---
-title: A Component Using External Plugins
+title: बाह्य प्लगइन्स वापरणारा एक कौम्पोनॅन्ट
 order: 3
 domid: markdown-example
 ---

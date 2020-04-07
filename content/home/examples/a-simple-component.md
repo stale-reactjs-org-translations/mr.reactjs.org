@@ -1,5 +1,5 @@
 ---
-title: A Simple Component
+title: एक साधा कॉम्पोनेन्ट
 order: 0
 domid: hello-example
 ---
