@@ -14,20 +14,23 @@ redirect_from:
 
 This tutorial doesn't assume any existing React knowledge.
 
-## Before We Start the Tutorial {#before-we-start-the-tutorial}
+## ट्यूटोरियल सुरू करण्यापूर्वी {#before-we-start-the-tutorial}
 
-We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React app, and mastering it will give you a deep understanding of React.
+या ट्यूटोरियल मध्ये आपण एक छोटासा गेम तयार करू.**आपण कदाचित येथे गेम तयार करण्यासाठी आला नसाल- परंतु एक संधी द्या.** आपण ट्यूटोरियलमध्ये शिकत असलेली टेक्निक कोणतेही अँप तयार करण्यासाठी मूलभूत आहेत आणि त्यामध्ये प्रभुत्व मिळविण्यामुळे आपल्याला प्रिऍक्टचे सखोल ज्ञान मिळेल.
 
->Tip
+>टीप
 >
->This tutorial is designed for people who prefer to **learn by doing**. If you prefer learning concepts from the ground up, check out our [step-by-step guide](/docs/hello-world.html). You might find this tutorial and the guide complementary to each other.
+>हे ट्यूटोरियल अश्यांसाठी डिझाइन केले आहे जे प्रात्यक्षिक करून शिकण्यास प्राधान्य देतात. आपण सुरुवातीपासूनच संकल्पनेपासून शिकण्यास प्राधान्य देत असाल तर, आमचे येथे पाहावे [step-by-step guide](/docs/hello-world.html). आपल्याला ट्युटोरिअल आणि येथे दिलेले गाईड एकमेकास पूरक आणि संलग्न आढळतील.
 
 The tutorial is divided into several sections:
+यूटोरियल हे पुढील विभागांमध्ये विभागले गेले आहे:
 
-* [Setup for the Tutorial](#setup-for-the-tutorial) will give you **a starting point** to follow the tutorial.
-* [Overview](#overview) will teach you **the fundamentals** of React: components, props, and state.
+* [Setup for the Tutorial](#setup-for-the-tutorial) हे आपल्याला एक **स्टार्टींग पॉईंट** प्रदान करेल जेणेकरून आपण हे यूटोरियल समजू शकाल.
+* [Overview](#overview) हे आपल्याला रिऍक्ट चे **फंडामेंटल्स** कॉम्पोनन्ट्स प्रॉप्स स्टेट्स शिकवेल.
 * [Completing the Game](#completing-the-game) will teach you **the most common techniques** in React development.
+
 * [Adding Time Travel](#adding-time-travel) will give you **a deeper insight** into the unique strengths of React.
+
 
 You don't have to complete all of the sections at once to get the value out of this tutorial. Try to get as far as you can -- even if it's one or two sections.
 
