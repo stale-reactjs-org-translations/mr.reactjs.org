@@ -27,36 +27,34 @@ The tutorial is divided into several sections:
 
 * [Setup for the Tutorial](#setup-for-the-tutorial) हे आपल्याला एक **स्टार्टींग पॉईंट** प्रदान करेल जेणेकरून आपण हे यूटोरियल समजू शकाल.
 * [Overview](#overview) हे आपल्याला रिऍक्ट चे **फंडामेंटल्स** कॉम्पोनन्ट्स प्रॉप्स स्टेट्स शिकवेल.
-* [Completing the Game](#completing-the-game) will teach you **the most common techniques** in React development.
+* [Completing the Game](#completing-the-game) हे आपल्याला **कॉमन टेक्निक** शिकण्यास मदत करेल.
+* [Adding Time Travel](#adding-time-travel) ह्याच्या साह्याने रिऍक्ट च्याअद्वितीय सामर्थ्याबद्दल आपल्याला **सखोल अंतर्दृष्टी(माहिती)** मिळेल.
 
-* [Adding Time Travel](#adding-time-travel) will give you **a deeper insight** into the unique strengths of React.
+या ट्यूटोरियलमधून मूल्य मिळविण्यासाठी आपल्याला एकाच वेळी सर्व विभाग पूर्ण करण्याची आवश्यकता नाही. आपण शक्य तितके पुढे वाचत जाण्याचा प्रयत्न करा - ते एक किंवा दोन विभाग असले तरीही चालतील.
 
+### आपले काय बनवण्याचे उद्दिष्ट आहे? {#what-are-we-building}
 
-You don't have to complete all of the sections at once to get the value out of this tutorial. Try to get as far as you can -- even if it's one or two sections.
+ह्या ट्युटोरिअल मध्ये आपण एक इंटरॅक्टिव्ह टिक-टॅक-तोव गेम, रिऍक्ट वापरून कसे बनवावे, हे पाहुयात.
 
-### What Are We Building? {#what-are-we-building}
+आपण शेवटी काय साध्य करणार आहोत येथे पाहावे: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. जर हा कॉड तुम्हाला समजत नसेल किंवा अपरिचित असे, तर काळजी करू नका. ह्या ट्युटोरिअल चे उद्दिष्ट आपल्याला रिऍक्ट आणि त्याचे सिन्टाक्स समजणे हे आहे.
 
-In this tutorial, we'll show how to build an interactive tic-tac-toe game with React.
+आमची शिफारस आहे की ट्यूटोरियल सुरू ठेवण्यापूर्वी आपण टिक-टॅक-टू गेम पहा. आपल्या लक्षात येणाऱ्या वैशिष्ट्यांपैकी एक म्हणजे गेमच्या बोर्डच्या उजवीकडे एक क्रमांकित यादी आहे. ही यादी आपल्याला गेममध्ये झालेल्या सर्व हालचालींचा इतिहास देते आणि गेम जसजसा प्रगती होत जातो तसतसा अद्यतनित केला जातो.
 
-You can see what we'll be building here: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. If the code doesn't make sense to you, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
+एकदा आपण टिक-टॅक-टू गेमशी परिचित झाल्यावर ते बंद करू शकता. आम्ही या ट्यूटोरियलमधील एका साध्या टेम्पलेटपासून प्रारंभ करू. आमची पुढची पायरी आपल्याला सेट अप करणे आहे जेणेकरून आपण गेम तयार करणे सुरू करू शकाल.
 
-We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.
+### पूर्वापेक्षित {#prerequisites}
 
-You can close the tic-tac-toe game once you're familiar with it. We'll be starting from a simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+आम्ही असे गृहित धरू की आपणास एचटीएमएल व जावास्क्रिप्टची काहीशी ओळख आहे, परंतु आपण वेगळ्या प्रोग्रामिंग भाषेतून येत असलात तरीही आपण त्यास अनुसरण करण्यास सक्षम असावे. आम्ही असे गृहीत धरू की आपण फंकशन्स, ऑब्जेक्ट्स, अरे आणि काही प्रमाणात लासेस यासारख्या प्रोग्रामिंग संकल्पनांसह परिचित आहात.
 
-### Prerequisites {#prerequisites}
+आपल्याला जावास्क्रिप्ट पुनरावलोकन करणे आवश्यक असल्यास, आम्ही हे वाचायची शिफारस करतो [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). लक्षात घ्या की आम्ही ES6 कडील काही वैशिष्ट्ये देखील वापरत आहोत - जावास्क्रिप्टची अलीकडील आवृत्ती. या ट्यूटोरियल मध्ये आपण हे वापरत आहोत [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), आणि [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)स्टेटमेन्ट. ES6 कोड काय बनवते ते तपासण्यासाठी आपण हे वापरू शकता [Babel REPL](babel://es5-syntax-example)
 
-We'll assume that you have some familiarity with HTML and JavaScript, but you should be able to follow along even if you're coming from a different programming language. We'll also assume that you're familiar with programming concepts like functions, objects, arrays, and to a lesser extent, classes.
+## ट्यूटोरियल साठी सेटअप {#setup-for-the-tutorial}
 
-If you need to review JavaScript, we recommend reading [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). Note that we're also using some features from ES6 -- a recent version of JavaScript. In this tutorial, we're using [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), and [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements. You can use the [Babel REPL](babel://es5-syntax-example) to check what ES6 code compiles to.
+हे ट्यूटोरियल पूर्ण करण्याचे दोन मार्ग आहेतः आपण एकतर आपल्या ब्राउझरमध्ये कोड लिहू शकता किंवा आपण आपल्या संगणकावर स्थानिक विकास वातावरण सेट करू शकता.
 
-## Setup for the Tutorial {#setup-for-the-tutorial}
+### सेटअप पर्याय 1: ब्राउझरमध्ये कोड ललिहणे बाबत {#setup-option-1-write-code-in-the-browser}
 
-There are two ways to complete this tutorial: you can either write the code in your browser, or you can set up a local development environment on your computer.
-
-### Setup Option 1: Write Code in the Browser {#setup-option-1-write-code-in-the-browser}
-
-This is the quickest way to get started!
+हा प्रारंभ करण्याचा वेगवान मार्ग आहे!
 
 First, open this **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in a new tab. The new tab should display an empty tic-tac-toe game board and React code. We will be editing the React code in this tutorial.
 
