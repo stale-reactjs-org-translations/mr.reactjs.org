@@ -46,7 +46,7 @@ The tutorial is divided into several sections:
 
 आम्ही असे गृहित धरू की आपणास एचटीएमएल व जावास्क्रिप्टची काहीशी ओळख आहे, परंतु आपण वेगळ्या प्रोग्रामिंग भाषेतून येत असलात तरीही आपण त्यास अनुसरण करण्यास सक्षम असावे. आम्ही असे गृहीत धरू की आपण फंकशन्स, ऑब्जेक्ट्स, अरे आणि काही प्रमाणात लासेस यासारख्या प्रोग्रामिंग संकल्पनांसह परिचित आहात.
 
-आपल्याला जावास्क्रिप्ट पुनरावलोकन करणे आवश्यक असल्यास, आम्ही हे वाचायची शिफारस करतो [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). लक्षात घ्या की आम्ही ES6 कडील काही वैशिष्ट्ये देखील वापरत आहोत - जावास्क्रिप्टची अलीकडील आवृत्ती. या ट्यूटोरियल मध्ये आपण हे वापरत आहोत [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), आणि [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)स्टेटमेन्ट. ES6 कोड काय बनवते ते तपासण्यासाठी आपण हे वापरू शकता [Babel REPL](babel://es5-syntax-example)
+आपल्याला जावास्क्रिप्ट पुनरावलोकन करणे आवश्यक असल्यास, आम्ही हे वाचायची शिफारस करतो [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). लक्षात घ्या की आम्ही ES6 कडील काही वैशिष्ट्ये देखील वापरत आहोत - जावास्क्रिप्टची अलीकडील आवृत्ती. या ट्यूटोरियल मध्ये आपण हे वापरत आहोत [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), आणि [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)स्टेटमेन्ट. ES6 कोड काय बनवते ते तपासण्यासाठी आपण [Babel REPL](babel://es5-syntax-example) हे वापरू शकता.
 
 ## ट्यूटोरियल साठी सेटअप {#setup-for-the-tutorial}
 
@@ -110,25 +110,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 ```
 
-Now if you run `npm start` in the project folder and open `http://localhost:3000` in the browser, you should see an empty tic-tac-toe field.
+आता आपण प्रोजेक्ट फोल्डरमध्ये `npm start`चालवत असल्यास आणि ब्राउझरमध्ये `http://localhost:3000`उघडल्यास, आपल्याला रिक्त टिक-टॅक-टू फील्ड दिसायला हवे.
 
-We recommend following [these instructions](https://babeljs.io/docs/editors/) to configure syntax highlighting for your editor.
+आम्ही आपल्या संपादकासाठी सिंटॅक्स हायलाइटिंग कॉन्फिगर करण्यासाठी [these instructions](https://babeljs.io/docs/editors/) चे अनुसरण करण्याची शिफारस करतो.
 
 </details>
 
-### Help, I'm Stuck! {#help-im-stuck}
+### मदती साठी! {#help-im-stuck}
 
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/reactiflux) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
+आपण अडकल्यास, [community support resources](/community/support.html)पहा. विशेषतः, [Reactiflux Chat](https://discord.gg/reactiflux) द्रुतगतीने मदत मिळविण्याचा एक चांगला मार्ग आहे. आपणास उत्तर न मिळाल्यास किंवा आपण अडखळत राहिल्यास कृपया समस्या नोंदवा आणि आम्ही आपली मदत करू.
 
-## Overview {#overview}
+## ओव्हरव्हिव {#overview}
 
-Now that you're set up, let's get an overview of React!
+आता आपण सेट केले आहे, रिऍक्टचे ओव्हरव्हिव पाहूया!
 
-### What Is React? {#what-is-react}
+### रिऍक्ट काय आहे? {#what-is-react}
 
-React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called "components".
+रिऍक्ट यूजर इंटरफेस तयार करण्यासाठी एक घोषणाकारक, कार्यक्षम आणि लवचिक जावास्क्रिप्ट लायब्ररी आहे. हे आपल्याला "घटक" म्हणून ओळखल्या जाणाऱ्या कोडच्या छोट्या आणि वेगळ्या तुकड्यांमधून जटिल यूआय तयार करू देते.
 
-React has a few different kinds of components, but we'll start with `React.Component` subclasses:
+रिऍक्टमध्ये काही वेगवेगळ्या प्रकारचे घटक असतात, परंतु आम्ही `React.Component`उपवर्गासह प्रारंभ करू:
 
 ```javascript
 class ShoppingList extends React.Component {
