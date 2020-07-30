@@ -56,34 +56,34 @@ The tutorial is divided into several sections:
 
 हा प्रारंभ करण्याचा वेगवान मार्ग आहे!
 
-First, open this **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in a new tab. The new tab should display an empty tic-tac-toe game board and React code. We will be editing the React code in this tutorial.
+प्रथम हे नवीन टॅबमध्ये उघडा  **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** नवीन टॅबमध्ये रिक्त टिक-टॅक-टू गेम बोर्ड आणि प्रतिक्रिया कोड प्रदर्शित करेल. या ट्यूटोरियल मध्ये आपण रिऍक्ट कोड संपादित करू.
 
-You can now skip the second setup option, and go to the [Overview](#overview) section to get an overview of React.
+आपण आता दुसरा सेटअप पर्याय वगळू शकता आणि रिऍक्ट चे ओव्हरविव मिळविण्यासाठी [Overview](#overview)नवीन विभागात जा.
 
-### Setup Option 2: Local Development Environment {#setup-option-2-local-development-environment}
+### सेटअप पर्याय 2: स्थानिक विकास पर्यावरण {#setup-option-2-local-development-environment}
 
-This is completely optional and not required for this tutorial!
+हे पूर्णपणे पर्यायी आहे आणि या ट्यूटोरियलसाठी आवश्यक नाही!
 
 <br>
 
 <details>
 
-<summary><b>Optional: Instructions for following along locally using your preferred text editor</b></summary>
+<summary><b>वैकल्पिक: आपल्या पसंतीच्या टेक्स्ट एडिटर वापर करून स्थानिक पातळीवर अनुसरण करण्यासाठी सूचना</b></summary>
 
-This setup requires more work but allows you to complete the tutorial using an editor of your choice. Here are the steps to follow:
+या सेटअपला अधिक काम आवश्यक आहे परंतु आपल्याला आपल्या पसंतीच्या टेक्स्ट एडिटर वापर करून ट्यूटोरियल पूर्ण करण्याची अनुमती देते. अनुसरण करण्याचे चरण येथे आहेत:
 
-1. Make sure you have a recent version of [Node.js](https://nodejs.org/en/) installed.
-2. Follow the [installation instructions for Create React App](/docs/create-a-new-react-app.html#create-react-app) to make a new project.
+1. आपल्याकडे [Node.js](https://nodejs.org/en/) स्थापित केलेली अलीकडील आवृत्ती आहे हे सुनिश्चित करा.
+2. नवीन प्रकल्प बनविण्यासाठी [installation instructions for Create React App](/docs/create-a-new-react-app.html#create-react-app)चे अनुसरण करा.
 
 ```bash
 npx create-react-app my-app
 ```
 
-3. Delete all files in the `src/` folder of the new project 
+3. नवीन प्रकल्पाच्या `src/` फोल्डरमधील सर्व फायली हटवावे.
 
-> Note:
+> नोंद:
 >
->**Don't delete the entire `src` folder, just the original source files inside it.** We'll replace the default source files with examples for this project in the next step.
+>**संपूर्ण `src` हटवू नका, त्यातील मूळ स्त्रोत फाइल्सच हटवा.** आम्ही पुढील चरणात या प्रकल्पातील उदाहरणांसह डीफॉल्ट स्त्रोत फाइल पुनर्स्थित करू.
 
 ```bash
 cd my-app
@@ -98,12 +98,11 @@ del *
 # Then, switch back to the project folder
 cd ..
 ```
+4. [this CSS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100) सह `src /` फोल्डरमध्ये `index.css` नावाची फाईल जोडा.
 
-4. Add a file named `index.css` in the `src/` folder with [this CSS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100).
+5. [this JS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010) सह `src /` फोल्डरमध्ये `index.js` नावाची फाईल जोडा.
 
-5. Add a file named `index.js` in the `src/` folder with [this JS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010).
-
-6. Add these three lines to the top of `index.js` in the `src/` folder:
+6. ह्या तीन लाईन्स  `src/` फोल्डर मध्ये `index.js` ह्या वर ऍड करा:
 
 ```js
 import React from 'react';
