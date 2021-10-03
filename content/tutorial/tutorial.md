@@ -14,75 +14,75 @@ redirect_from:
 
 This tutorial doesn't assume any existing React knowledge.
 
-## Before We Start the Tutorial {#before-we-start-the-tutorial}
+## ट्यूटोरियल सुरू करण्यापूर्वी {#before-we-start-the-tutorial}
 
-We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React app, and mastering it will give you a deep understanding of React.
+या ट्यूटोरियल मध्ये आपण एक छोटासा गेम तयार करू.**आपण कदाचित येथे गेम तयार करण्यासाठी आला नसाल- परंतु एक संधी द्या.** आपण ट्यूटोरियलमध्ये शिकत असलेली टेक्निक कोणतेही अ‍ॅप तयार करण्यासाठी मूलभूत आहेत आणि त्यामध्ये प्रभुत्व मिळविण्यामुळे आपल्याला React चे सखोल ज्ञान मिळेल.
 
->Tip
+>टीप
 >
->This tutorial is designed for people who prefer to **learn by doing**. If you prefer learning concepts from the ground up, check out our [step-by-step guide](/docs/hello-world.html). You might find this tutorial and the guide complementary to each other.
+>हे ट्यूटोरियल अश्यांसाठी डिझाइन केले आहे जे प्रात्यक्षिक करून शिकण्यास प्राधान्य देतात. आपण सुरुवातीपासूनच संकल्पनेपासून शिकण्यास प्राधान्य देत असाल तर, आमचे येथे पाहावे [step-by-step guide](/docs/hello-world.html). आपल्याला ट्युटोरिअल आणि येथे दिलेले गाईड एकमेकास पूरक आणि संलग्न आढळतील.
 
-The tutorial is divided into several sections:
+यूटोरियल हे पुढील विभागांमध्ये विभागले गेले आहे:
 
-* [Setup for the Tutorial](#setup-for-the-tutorial) will give you **a starting point** to follow the tutorial.
-* [Overview](#overview) will teach you **the fundamentals** of React: components, props, and state.
-* [Completing the Game](#completing-the-game) will teach you **the most common techniques** in React development.
-* [Adding Time Travel](#adding-time-travel) will give you **a deeper insight** into the unique strengths of React.
+* [Setup for the Tutorial](#setup-for-the-tutorial) हे आपल्याला एक **स्टार्टींग पॉईंट** प्रदान करेल जेणेकरून आपण हे यूटोरियल समजू शकाल.
+* [Overview](#overview) हे आपल्याला React चे **फंडामेंटल्स** कॉम्पोनन्ट्स प्रॉप्स स्टेट्स शिकवेल.
+* [Completing the Game](#completing-the-game) हे आपल्याला **कॉमन टेक्निक** शिकण्यास मदत करेल.
+* [Adding Time Travel](#adding-time-travel) ह्याच्या साह्याने React च्या अद्वितीय सामर्थ्याबद्दल आपल्याला **सखोल माहिती** मिळेल.
 
-You don't have to complete all of the sections at once to get the value out of this tutorial. Try to get as far as you can -- even if it's one or two sections.
+या ट्यूटोरियलमधून मूल्य मिळविण्यासाठी आपल्याला एकाच वेळी सर्व विभाग पूर्ण करण्याची आवश्यकता नाही. आपण शक्य तितके पुढे वाचत जाण्याचा प्रयत्न करा - ते एक किंवा दोन विभाग असले तरीही चालतील.
 
-### What Are We Building? {#what-are-we-building}
+### आपले काय बनवण्याचे उद्दिष्ट आहे? {#what-are-we-building}
 
-In this tutorial, we'll show how to build an interactive tic-tac-toe game with React.
+ह्या ट्युटोरिअल मध्ये आपण एक इंटरॅक्टिव्ह टिक-टैक्-टो गेम, React वापरून कसे बनवावे, हे पाहुयात.
 
-You can see what we'll be building here: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. If the code doesn't make sense to you, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
+आपण शेवटी काय साध्य करणार आहोत येथे पाहावे: **[Final Result](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**. जर हा कोड तुम्हाला समजत नसेल किंवा अपरिचित असे, तर काळजी करू नका. ह्या ट्युटोरिअल चे उद्दिष्ट आपल्याला React आणि त्याचे सिंटॅक्स समजणे हे आहे.
 
-We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.
+आमची शिफारस आहे की ट्यूटोरियल सुरू ठेवण्यापूर्वी आपण टिक-टॅक-टू गेम पहा. आपल्या लक्षात येणाऱ्या वैशिष्ट्यांपैकी एक म्हणजे गेमच्या बोर्डच्या उजवीकडे एक क्रमांकित यादी आहे. ही यादी आपल्याला गेममध्ये झालेल्या सर्व हालचालींचा इतिहास देते आणि गेम जसजसा प्रगती होत जातो तसतसा अद्यतनित केला जातो.
 
-You can close the tic-tac-toe game once you're familiar with it. We'll be starting from a simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+एकदा आपण टिक-टॅक-टू गेमशी परिचित झाल्यावर ते बंद करू शकता. आम्ही या ट्यूटोरियलमधील एका साध्या टेम्पलेटपासून प्रारंभ करू. आमची पुढची पायरी आपल्याला सेट अप करणे आहे जेणेकरून आपण गेम तयार करणे सुरू करू शकाल.
 
-### Prerequisites {#prerequisites}
+### पूर्वापेक्षित {#prerequisites}
 
-We'll assume that you have some familiarity with HTML and JavaScript, but you should be able to follow along even if you're coming from a different programming language. We'll also assume that you're familiar with programming concepts like functions, objects, arrays, and to a lesser extent, classes.
+आम्ही असे गृहित धरू की आपणास एचटीएमएल व जावास्क्रिप्टची काहीशी ओळख आहे, परंतु आपण वेगळ्या प्रोग्रामिंग भाषेतून येत असलात तरीही आपण त्यास अनुसरण करण्यास सक्षम असावे. आम्ही असे गृहीत धरू की आपण फंकशन्स, ऑब्जेक्ट्स, अरे आणि काही प्रमाणात क्लासेस यासारख्या प्रोग्रामिंग संकल्पनांसह परिचित आहात.
 
-If you need to review JavaScript, we recommend reading [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). Note that we're also using some features from ES6 -- a recent version of JavaScript. In this tutorial, we're using [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), and [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) statements. You can use the [Babel REPL](babel://es5-syntax-example) to check what ES6 code compiles to.
+आपल्याला जावास्क्रिप्ट पुनरावलोकन करणे आवश्यक असल्यास, आम्ही हे वाचायची शिफारस करतो [this guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript). लक्षात घ्या की आपण ES6 कडील काही वैशिष्ट्ये देखील वापरत आहोत - जावास्क्रिप्टची अलीकडील आवृत्ती. या ट्यूटोरियल मध्ये आपण हे वापरत आहोत [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), आणि [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)स्टेटमेन्ट. ES6 कोड काय बनवते ते तपासण्यासाठी आपण [Babel REPL](babel://es5-syntax-example) हे वापरू शकता.
 
-## Setup for the Tutorial {#setup-for-the-tutorial}
+## ट्यूटोरियल साठी सेटअप {#setup-for-the-tutorial}
 
-There are two ways to complete this tutorial: you can either write the code in your browser, or you can set up a local development environment on your computer.
+हे ट्यूटोरियल पूर्ण करण्याचे दोन मार्ग आहेतः आपण एकतर आपल्या ब्राउझरमध्ये कोड लिहू शकता किंवा आपण आपल्या संगणकावर स्थानिक विकास वातावरण सेट करू शकता.
 
-### Setup Option 1: Write Code in the Browser {#setup-option-1-write-code-in-the-browser}
+### सेटअप पर्याय 1: ब्राउझरमध्ये कोड ललिहणे बाबत {#setup-option-1-write-code-in-the-browser}
 
-This is the quickest way to get started!
+हा प्रारंभ करण्याचा वेगवान मार्ग आहे!
 
-First, open this **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** in a new tab. The new tab should display an empty tic-tac-toe game board and React code. We will be editing the React code in this tutorial.
+प्रथम हे नवीन टॅबमध्ये उघडा  **[Starter Code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)** नवीन टॅबमध्ये रिक्त टिक-टैक्-टो गेम बोर्ड आणि React कोड प्रदर्शित करेल. या ट्यूटोरियल मध्ये आपण React कोड संपादित करू.
 
-You can now skip the second setup option, and go to the [Overview](#overview) section to get an overview of React.
+आपण आता दुसरा सेटअप पर्याय वगळू शकता आणि React चे ओव्हरविव मिळविण्यासाठी [Overview](#overview) नवीन विभागात जा.
 
-### Setup Option 2: Local Development Environment {#setup-option-2-local-development-environment}
+### सेटअप पर्याय 2: स्थानिक विकास पर्यावरण {#setup-option-2-local-development-environment}
 
-This is completely optional and not required for this tutorial!
+हे पूर्णपणे पर्यायी आहे आणि या ट्यूटोरियलसाठी आवश्यक नाही!
 
 <br>
 
 <details>
 
-<summary><b>Optional: Instructions for following along locally using your preferred text editor</b></summary>
+<summary><b>वैकल्पिक: आपल्या पसंतीच्या टेक्स्ट एडिटर वापर करून स्थानिक पातळीवर अनुसरण करण्यासाठी सूचना</b></summary>
 
-This setup requires more work but allows you to complete the tutorial using an editor of your choice. Here are the steps to follow:
+या सेटअपला अधिक काम आवश्यक आहे परंतु आपल्याला आपल्या पसंतीच्या टेक्स्ट एडिटर वापर करून ट्यूटोरियल पूर्ण करण्याची अनुमती देते. अनुसरण करण्याचे चरण येथे आहेत:
 
-1. Make sure you have a recent version of [Node.js](https://nodejs.org/en/) installed.
-2. Follow the [installation instructions for Create React App](/docs/create-a-new-react-app.html#create-react-app) to make a new project.
+1. आपल्याकडे [Node.js](https://nodejs.org/en/) स्थापित केलेली अलीकडील आवृत्ती आहे हे सुनिश्चित करा.
+2. नवीन प्रकल्प बनविण्यासाठी [installation instructions for Create React App](/docs/create-a-new-react-app.html#create-react-app)चे अनुसरण करा.
 
 ```bash
 npx create-react-app my-app
 ```
 
-3. Delete all files in the `src/` folder of the new project 
+3. नवीन प्रकल्पाच्या `src/` फोल्डरमधील सर्व फायली हटवावे.
 
-> Note:
+> नोंद:
 >
->**Don't delete the entire `src` folder, just the original source files inside it.** We'll replace the default source files with examples for this project in the next step.
+>**संपूर्ण `src` हटवू नका, त्यातील मूळ स्त्रोत फाइल्सच हटवा.** आम्ही पुढील चरणात या प्रकल्पातील उदाहरणांसह डीफॉल्ट स्त्रोत फाइल पुनर्स्थित करू.
 
 ```bash
 cd my-app
@@ -97,12 +97,11 @@ del *
 # Then, switch back to the project folder
 cd ..
 ```
+4. [this CSS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100) सह `src /` फोल्डरमध्ये `index.css` नावाची फाईल जोडा.
 
-4. Add a file named `index.css` in the `src/` folder with [this CSS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0100).
+5. [this JS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010) सह `src /` फोल्डरमध्ये `index.js` नावाची फाईल जोडा.
 
-5. Add a file named `index.js` in the `src/` folder with [this JS code](https://codepen.io/gaearon/pen/oWWQNa?editors=0010).
-
-6. Add these three lines to the top of `index.js` in the `src/` folder:
+6. ह्या तीन लाईन्स  `src/` फोल्डर मध्ये `index.js` ह्या वर ऍड करा:
 
 ```js
 import React from 'react';
@@ -110,25 +109,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 ```
 
-Now if you run `npm start` in the project folder and open `http://localhost:3000` in the browser, you should see an empty tic-tac-toe field.
+आता आपण प्रोजेक्ट फोल्डरमध्ये `npm start`चालवत असल्यास आणि ब्राउझरमध्ये `http://localhost:3000`उघडल्यास, आपल्याला रिक्त टिक-टॅक-टू फील्ड दिसायला हवे.
 
-We recommend following [these instructions](https://babeljs.io/docs/editors/) to configure syntax highlighting for your editor.
+आम्ही आपल्या संपादकासाठी सिंटॅक्स हायलाइटिंग कॉन्फिगर करण्यासाठी [these instructions](https://babeljs.io/docs/editors/) चे अनुसरण करण्याची शिफारस करतो.
 
 </details>
 
-### Help, I'm Stuck! {#help-im-stuck}
+### मदती साठी! {#help-im-stuck}
 
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/reactiflux) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
+आपण अडखळल्यास, [community support resources](/community/support.html)पहा. विशेषतः, [Reactiflux Chat](https://discord.gg/reactiflux) द्रुतगतीने मदत मिळविण्याचा एक चांगला मार्ग आहे. आपणास उत्तर न मिळाल्यास किंवा आपण अडखळत राहिल्यास कृपया समस्या नोंदवा आणि आम्ही आपली मदत करू.
 
-## Overview {#overview}
+## ओव्हरव्हिव {#overview}
 
-Now that you're set up, let's get an overview of React!
+आता आपण सेट केले आहे, React चे ओव्हरव्हिव पाहूया!
 
-### What Is React? {#what-is-react}
+### React काय आहे? {#what-is-react}
 
-React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called "components".
+React यूजर इंटरफेस तयार करण्यासाठी एक घोषणाकारक, कार्यक्षम आणि लवचिक जावास्क्रिप्ट लायब्ररी आहे. हे आपल्याला "कौम्पोनॅन्ट" म्हणून ओळखल्या जाणाऱ्या कोडच्या छोट्या आणि वेगळ्या तुकड्यांमधून जटिल यूआय तयार करू देते.
 
-React has a few different kinds of components, but we'll start with `React.Component` subclasses:
+React मध्ये काही वेगवेगळ्या प्रकारचे कौम्पोनॅन्ट असतात, परंतु आम्ही `React.Component`उपवर्गासह प्रारंभ करू:
 
 ```javascript
 class ShoppingList extends React.Component {
